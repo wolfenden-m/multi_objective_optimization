@@ -167,6 +167,13 @@ multi_objective_optimization/
 │       └── tops.csv                   # Tops info
 │       └── bottoms.csv                # Bottoms info
 │
+├── notebooks/                         # Parts 1-4 descriptions above
+│   └── 00_preprocessing.ipynb         # generation of clothes csvs, all_solns, and full_pareto_front_df
+│   └── 01_introduction.ipynb          # Part 1
+│   └── 02_moo_algorithms.ipynb        # Part 2
+│   └── 03_modm_methods.ipynb          # Part 3
+│   └── 04_rag_lm_model.ipynb          # Part 4
+|
 ├── docs/
 │   └── mcdm_moo_reference_for_rag.md  # MOO knowledge for RAG agent
 │
