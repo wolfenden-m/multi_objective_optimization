@@ -50,10 +50,11 @@ Several algorithms are implemented and compared, including:
     
 These are used to approximate the Pareto front and analyze how different algorithmic biases affect results.
 We want to approximate as much of the true Pareto front as possible, as fast as possible, and 
-comparison involves visual inspection of solution space:
-<img src="images/algo_comp_img.png" width="800" />  
+comparison involves visual inspection of solution space:  
+<img src="images/algo_comp_img.png" width="600" />  
+  
 and numerical metrics:  
-<img src="images/algo_comp_table.png" width="800" />  
+<img src="images/algo_comp_table.png" width="600" />  
 ### Part 3 (Decision-making methods (MCDM))
 After generating Pareto-optimal solutions, multiple decision-making approaches are applied to select a final solution, including:
 - Weighted sum methods
@@ -61,9 +62,12 @@ After generating Pareto-optimal solutions, multiple decision-making approaches a
 - Knee-point selection
   
 This reflects how MOO is used in practice: optimize first, decide later.  
-When applicable, visuals showing how the method selects its point are displayed.
-<img src="images/modm_example_1.png" width="400" />  
+When applicable, visuals showing how the method selects its point are displayed, like for example the Epsilon Constraint method.    
+First you constrain one objective, e.g. saying any solution where you lose a max of 40 outfits:  
+<img src="images/modm_example.png" width="400" />  
+We can now treat this as a two objective problem:  
 <img src="images/modm_example_2.png" width="400" />  
+Then we can set a second constraint, like a max volume of 20, and since 3-2 = 1 we only have one solution remaining:  
 <img src="images/modm_example_3.png" width="400" />  
 
 ### Part 4 (LLM-powered explainer chatbot):
@@ -87,9 +91,4 @@ Some examples:
 - Hybrid optimization + decision workflows
 - Explainability using LLMs
   
-as well as my ability to explain concepts,
-
-
-## Quick start
-```bash
-pip install -r requirements.txt
+as well as my ability to apply these concepts and relay them to a non-technical audience.
