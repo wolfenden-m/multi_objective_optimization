@@ -37,7 +37,8 @@ Introduction to Pareto theory: explaination of concepts like dominence, optimali
 Ground-truth solution space: Because the problem size is manageable, all possible solutions are enumerated.
 This allows us to compute the true Pareto front and use it as a reference when evaluating algorithms.  
 2D Representation of the full solution space w/ the true Pareto front 
-(split across three plots due to 3 objectives -> 2 dimensions, 3D Plotly plots in notebook):
+(split across three plots due to 3 objectives -> 2 dimensions, 3D Plotly plots in notebook):  
+<img src="images/soln_space_pareto.png" width="800" />
 
 ### Part 2 (MOO Algorithms)
 Explanation of why algorithms are necessary for complex MOO problems, and the principles of evolutioary programming.  
@@ -50,17 +51,20 @@ Several algorithms are implemented and compared, including:
 These are used to approximate the Pareto front and analyze how different algorithmic biases affect results.
 We want to approximate as much of the true Pareto front as possible, as fast as possible, and 
 comparison involves visual inspection of solution space:
-
-and numerical metrics:
-
+<img src="images/algo_comp_img.png" width="800" />  
+and numerical metrics:  
+<img src="images/algo_comp_table.png" width="800" />  
 ### Part 3 (Decision-making methods (MCDM))
 After generating Pareto-optimal solutions, multiple decision-making approaches are applied to select a final solution, including:
 - Weighted sum methods
 - TOPSIS
 - Knee-point selection
   
-This reflects how MOO is used in practice: optimize first, decide later.
+This reflects how MOO is used in practice: optimize first, decide later.  
 When applicable, visuals showing how the method selects its point are displayed.
+<img src="images/modm_example_1.png" width="400" />  
+<img src="images/modm_example_2.png" width="400" />  
+<img src="images/modm_example_3.png" width="400" />  
 
 ### Part 4 (LLM-powered explainer chatbot):
 A LangChain RAG chatbot is included that:
