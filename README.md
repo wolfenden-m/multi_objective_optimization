@@ -38,7 +38,7 @@ Ground-truth solution space: Because the problem size is manageable, all possibl
 This allows us to compute the true Pareto front and use it as a reference when evaluating algorithms.  
 2D Representation of the full solution space w/ the true Pareto front 
 (split across three plots due to 3 objectives -> 2 dimensions, 3D Plotly plots in notebook):  
-<img src="images/soln_space_pareto.png" width="800" />
+<img src="images/all_solns_with_pf.png" width="800" />
 
 ### Part 2 (MOO Algorithms)
 Explanation of why algorithms are necessary for complex MOO problems, and the principles of evolutioary programming.  
