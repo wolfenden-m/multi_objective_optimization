@@ -89,11 +89,7 @@ Some examples:
   
 as well as my ability to explain concepts,
 
-## Example Pareto Front
-![Pareto Front](screenshots/pareto_front.png)
 
 ## Quick start
 ```bash
 pip install -r requirements.txt
-python examples/run_nsga2.py
-python examples/run_chatbot.py
