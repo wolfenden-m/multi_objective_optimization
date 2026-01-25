@@ -1,4 +1,4 @@
-# Multi-Objective Optimization & Decision Making: A Worked Trip-Packing Example
+# Multi-Objective Optimization & Decision Making: A Worked Trip-Packing Example 👕👖
 
 This project demonstrates multi-objective optimization (MOO) and
 multi-criteria decision making (MCDM) using a realistic suitcase-packing
@@ -18,12 +18,14 @@ keep our favorites if possible. We now have three objectives to balance:
 - Minimize suitcase volume
 - Maximize number of possible outfits
 - Maximize how much we like the items we've brought
+   
 This situation is an everyday day conundrum as opposed to an industry-specific one,
 and the objectives conflict in intuitive ways, and aren, making the problem ideal for:
 - Demonstrating Pareto optimality
 - Comparing algorithm behavior
 - Applying decision-making methods
 - Explaining results to non-experts
+  
 The decision variables are binary (include or exclude clothing items), making this a discrete, combinatorial MOO problem.
 
 ## What this repository contains
@@ -31,34 +33,47 @@ This project demonstrates knowledge and
 shows application of the full MOO/MCDM process from initial problem context 
 to final solution(s):
 ### Part 1 (Problem Introduction)
-Introduction to Pareto theory: explaination of concepts like dominence, optimality, the Pareto front
+Introduction to Pareto theory: explaination of concepts like dominence, optimality, the Pareto front  
 Ground-truth solution space: Because the problem size is manageable, all possible solutions are enumerated.
-This allows us to compute the true Pareto front and use it as a reference when evaluating algorithms.
+This allows us to compute the true Pareto front and use it as a reference when evaluating algorithms.  
+2D Representation of the full solution space w/ the true Pareto front 
+(split across three plots due to 3 objectives -> 2 dimensions, 3D Plotly plots in notebook):
+
 ### Part 2 (MOO Algorithms)
-Several MOEAs are implemented and compared, including:
+Explanation of why algorithms are necessary for complex MOO problems, and the principles of evolutioary programming.  
+Several algorithms are implemented and compared, including:  
 - NSGA-II
 - SPEA2
 - MOEA/D
 - SMS-EMOA
+    
 These are used to approximate the Pareto front and analyze how different algorithmic biases affect results.
+We want to approximate as much of the true Pareto front as possible, as fast as possible, and 
+comparison involves visual inspection of solution space:
+
+and numerical metrics:
 
 ### Part 3 (Decision-making methods (MCDM))
 After generating Pareto-optimal solutions, multiple decision-making approaches are applied to select a final solution, including:
 - Weighted sum methods
 - TOPSIS
 - Knee-point selection
+  
 This reflects how MOO is used in practice: optimize first, decide later.
+When applicable, visuals showing how the method selects its point are displayed.
 
 ### Part 4 (LLM-powered explainer chatbot):
 A LangChain RAG chatbot is included that:
 - Reads the project notebooks and reference material
 - Answers conceptual questions about MOO/MCDM
 - Explains why different algorithms behave differently
-- Helps users decide what method to use for their own problems
+- Helps users decide what method to use for their own problems  
 The chatbot indexes:
 - Project notebooks
 - A conceptual MOO/MCDM reference
 - External decision-making resources
+  
+Some examples:
 
 # This project demonstrates
 - Pareto optimality and tradeoffs
@@ -67,6 +82,7 @@ The chatbot indexes:
 - Post-Pareto decision making
 - Hybrid optimization + decision workflows
 - Explainability using LLMs
+  
 as well as my ability to explain concepts,
 
 ## Example Pareto Front
