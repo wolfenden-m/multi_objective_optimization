@@ -47,8 +47,11 @@ for path in file_paths:
 
 
 # website
-web_loader = WebBaseLoader("https://www.1000minds.com/decision-making/what-is-mcdm-mcda")
-website_docs = web_loader.load()
+sites = ["https://www.1000minds.com/decision-making/what-is-mcdm-mcda", "https://www.nature.com/articles/s41598-025-28750-8"]
+site_docs = []
+for site in sites:
+    web_loader = WebBaseLoader(site)
+    site_docs.extend(web_loader.load())
 
 
 # splitter
@@ -67,7 +70,7 @@ text_splitter = RecursiveCharacterTextSplitter(
 )
 
 docs = text_splitter.split_documents(
-    reference_docs + script_docs + website_docs
+    reference_docs + script_docs + site_docs
 )
 
 
