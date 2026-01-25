@@ -75,13 +75,49 @@ A LangChain RAG chatbot is included that:
 - Reads the project notebooks and reference material
 - Answers conceptual questions about MOO/MCDM
 - Explains why different algorithms behave differently
-- Helps users decide what method to use for their own problems  
+- Helps users decide what method to use for their own problems
+utilizing the Qwen3-32b model through Groq and the nomic-embed-text model with Ollama for the embeddings.
+  
 The chatbot indexes:
 - Project notebooks
 - A conceptual MOO/MCDM reference
 - External decision-making resources
   
-Some examples:
+For example:
+```
+================================ Human Message =================================
+
+Why did MOPSO-CD underperform in our suitcase example problem? In what circumstance would MOPSO-CD outperform other algorithms?
+
+================================== Ai Message ==================================
+Tool Calls:
+  retrieve_context (79e4c4dha)
+ Call ID: 79e4c4dha
+  Args:
+    query: MOPSO-CD suitcase problem performance comparison
+================================= Tool Message =================================
+Name: retrieve_context
+
+================================== Ai Message ==================================
+
+The underperformance of **MOPSO-CD** in the suitcase example problem likely stems from its reliance on **crowding distance** to maintain diversity in the Pareto front. If the suitcase problem involves **highly constrained or discontinuous objective spaces** (e.g., strict capacity limits, non-linear trade-offs between objectives), MOPSO-CD's crowding distance metric may struggle to balance exploration and exploitation effectively. Additionally, if the problem's optimal solutions cluster in narrow regions of the search space, the **lack of adaptive mutation** in MOPSO-CD could hinder its ability to refine solutions in those areas.
+
+---
+
+### When MOPSO-CD Might Outperform Others:
+1. **Diverse Pareto Fronts**: Problems requiring a **spread-out set of solutions** (e.g., multi-mode optimization) where crowding distance ensures good coverage.
+2. **Low-Dimensional, Smooth Landscapes**: When objectives are **moderately conflicting** and the search space is not dominated by local optima.
+3. **Computationally Lightweight Needs**: If rapid convergence to a near-optimal set is prioritized over fine-grained precision (e.g., preliminary design exploration).
+4. **Problems with Connected Pareto Fronts**: Where the true Pareto front is continuous and convex, allowing crowding distance to effectively preserve diversity.
+
+---
+
+### Recommendations:
+- For the suitcase problem, consider hybridizing MOPSO-CD with **local search operators** or adjusting its **mutation rate** to better handle constraints.
+- Compare with **NSGA-II** (if non-dominated sorting suits the problem) or **MOEA/D** (for decomposition-based handling of complex trade-offs).
+
+Let me know if you'd like deeper analysis on specific algorithm mechanics!
+```
 
 # This project demonstrates
 - Pareto optimality and tradeoffs
